@@ -5,9 +5,9 @@
 # LICENSE file in the root directory of this source tree.
 
 """
-Data models for the First Rl Demo Environment.
+Data models for the OptimaTrade Trading Environment.
 
-The first_rl_demo environment is a simple test environment that echoes back messages.
+The environment simulates a stock price and tracks an agent's balance/holdings.
 """
 
 from enum import Enum

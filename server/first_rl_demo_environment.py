@@ -104,3 +104,22 @@ class FirstRlDemoEnvironment(Environment):
     def state(self) -> State:
         """Get the current environment state."""
         return self._state
+
+
+if __name__ == "__main__":
+    # Test the environment logic
+    import random
+    env = FirstRlDemoEnvironment()
+    obs = env.reset()
+    print(f"Initial State: {obs}")
+
+    total_reward = 0
+    for i in range(10):
+        # random action
+        action_type = random.choice(list(TradingActionType))
+        action = FirstRlDemoAction(action=action_type)
+        obs = env.step(action)
+        total_reward += obs.reward
+        print(f"Step {i+1}: Action={action_type.value}, Price={obs.price}, Net Worth={obs.net_worth}, Reward={obs.reward}")
+
+    print(f"Total Reward: {total_reward}")

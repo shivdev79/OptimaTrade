@@ -29,17 +29,17 @@ class FirstRlDemoEnv(
         >>> # Connect to a running server
         >>> with FirstRlDemoEnv(base_url="http://localhost:8000") as client:
         ...     result = client.reset()
-        ...     print(result.observation.echoed_message)
+        ...     print(result.observation.price)
         ...
-        ...     result = client.step(FirstRlDemoAction(message="Hello!"))
-        ...     print(result.observation.echoed_message)
+        ...     result = client.step(FirstRlDemoAction(action=TradingActionType.BUY))
+        ...     print(result.observation.net_worth)
 
     Example with Docker:
         >>> # Automatically start container and connect
         >>> client = FirstRlDemoEnv.from_docker_image("first_rl_demo-env:latest")
         >>> try:
         ...     result = client.reset()
-        ...     result = client.step(FirstRlDemoAction(message="Test"))
+        ...     result = client.step(FirstRlDemoAction(action=TradingActionType.BUY))
         ... finally:
         ...     client.close()
     """

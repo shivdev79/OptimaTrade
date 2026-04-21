@@ -5,9 +5,9 @@
 # LICENSE file in the root directory of this source tree.
 
 """
-FastAPI application for the First Rl Demo Environment.
+FastAPI application for the OptimaTrade Trading Environment.
 
-This module creates an HTTP server that exposes the FirstRlDemoEnvironment
+This module creates an HTTP server that exposes the Trading Environment
 over HTTP and WebSocket endpoints, compatible with EnvClient.
 
 Endpoints:
